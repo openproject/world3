@@ -7,14 +7,12 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.NavUtils;
 import android.support.v4.view.ViewPager;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity {
@@ -81,8 +79,8 @@ public class MainActivity extends FragmentActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
-            return 3;
+            // Show 2 total pages.
+            return 2;
         }
 
         @Override
@@ -93,8 +91,6 @@ public class MainActivity extends FragmentActivity {
                 return getString(R.string.title_section1).toUpperCase(l);
             case 1:
                 return getString(R.string.title_section2).toUpperCase(l);
-            case 2:
-                return getString(R.string.title_section3).toUpperCase(l);
             }
             return null;
         }
@@ -117,12 +113,21 @@ public class MainActivity extends FragmentActivity {
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_main_dummy,
-                    container, false);
-            TextView dummyTextView = (TextView) rootView
-                    .findViewById(R.id.section_label);
-            dummyTextView.setText(Integer.toString(getArguments().getInt(
-                    ARG_SECTION_NUMBER)));
+        	
+        	int sectionIndex = getArguments().getInt(ARG_SECTION_NUMBER);
+        	
+            View rootView = null;
+            if (sectionIndex == 1) {
+            	rootView = inflater.inflate(R.layout.fragment_main_section_one,
+            			container, false);
+            	ImageView imageView = (ImageView)rootView.findViewById(R.id.big_smile);
+            	imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+            } else if (sectionIndex == 2) {
+            	rootView = inflater.inflate(R.layout.fragment_main_section_two,
+            			container, false);
+//            	TextView titleView = (TextView)rootView.findViewById(R.id.descriptipn_title);
+            	
+            }
             return rootView;
         }
     }

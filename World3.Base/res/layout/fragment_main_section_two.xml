@@ -1,0 +1,22 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity$DummySectionFragment" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dip"
+        android:orientation="vertical"
+        android:background="@drawable/param_bg">
+
+        <TextView
+            android:id="@+id/param_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/param_header_text"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+</RelativeLayout>
