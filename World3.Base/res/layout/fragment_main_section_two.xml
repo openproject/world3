@@ -2,21 +2,37 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#dddddd"
     tools:context=".MainActivity$DummySectionFragment" >
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="4dip"
-        android:orientation="vertical"
-        android:background="@drawable/param_bg">
+        android:layout_margin="8dip"
+        android:background="#aaffffff" >
 
-        <TextView
-            android:id="@+id/param_header"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/param_header_text"
-            android:textSize="18sp" />
-    </LinearLayout>
+            android:orientation="vertical"
+            android:padding="20dip" >
+
+            <TextView
+                android:id="@+id/param_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/param_header_text"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/param_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dip"
+                android:lineSpacingMultiplier="1.3"
+                android:text="@string/param_body_text"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </ScrollView>
 
 </RelativeLayout>
