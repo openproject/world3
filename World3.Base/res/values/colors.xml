@@ -1,0 +1,4 @@
+<resources>
+    <drawable name="secret_garden_bg_normal">#88000000</drawable>
+	<drawable name="secret_garden_bg_pressed">#AAEE9A00</drawable>
+</resources>

@@ -2,10 +2,13 @@
 <resources>
 
     <string name="app_name">World3.Base</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">设置</string>
+    <string name="action_see_more">查看更多</string>
     <string name="title_section1">Section 1</string>
     <string name="title_section2">Section 2</string>
     <string name="title_section3">Section 3</string>
+
+    <string name="action_hide_secret_garden">秘密花园</string>
 
     <string name="param_header_text">微笑，是一种正能量</string>
     <string name="param_body_text">我相信微笑的正能量\n相信到它可以改天换地\n微笑带来的正能量\n会出现\n在每一个微笑着的人的身上\n\n
