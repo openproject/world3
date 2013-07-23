@@ -8,14 +8,13 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
 
-public class MainActivity extends FragmentActivity {
+import com.jfstudio.lib.world3.credits.PointNotify;
+
+public class MainActivity extends FragmentActivity implements PointNotify{
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -31,6 +30,9 @@ public class MainActivity extends FragmentActivity {
      * The {@link ViewPager} that will host the section contents.
      */
     ViewPager            mViewPager;
+
+    View                 mSecretGardenContainerView;
+    Button               mSecretGardenButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,10 +72,15 @@ public class MainActivity extends FragmentActivity {
             // getItem is called to instantiate the fragment for the given page.
             // Return a DummySectionFragment (defined as a static inner class
             // below) with the page number as its lone argument.
-            Fragment fragment = new DummySectionFragment();
-            Bundle args = new Bundle();
-            args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
-            fragment.setArguments(args);
+            Fragment fragment = null;
+            if (position == 0) {
+                fragment = new FirstFragment();
+            } else if (position == 1){
+                fragment = new SecondFragment();
+//                Bundle args = new Bundle();
+//                args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, position + 1);
+//                fragment.setArguments(args);
+            }
             return fragment;
         }
 
@@ -96,40 +103,9 @@ public class MainActivity extends FragmentActivity {
         }
     }
 
-    /**
-     * A dummy fragment representing a section of the app, but that simply
-     * displays dummy text.
-     */
-    public static class DummySectionFragment extends Fragment {
-        /**
-         * The fragment argument representing the section number for this
-         * fragment.
-         */
-        public static final String ARG_SECTION_NUMBER = "section_number";
-
-        public DummySectionFragment() {
-        }
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-        	
-        	int sectionIndex = getArguments().getInt(ARG_SECTION_NUMBER);
-        	
-            View rootView = null;
-            if (sectionIndex == 1) {
-            	rootView = inflater.inflate(R.layout.fragment_main_section_one,
-            			container, false);
-            	ImageView imageView = (ImageView)rootView.findViewById(R.id.big_smile);
-            	imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            } else if (sectionIndex == 2) {
-            	rootView = inflater.inflate(R.layout.fragment_main_section_two,
-            			container, false);
-//            	TextView titleView = (TextView)rootView.findViewById(R.id.descriptipn_title);
-            	
-            }
-            return rootView;
-        }
+    @Override
+    public int getPoint() {
+        return -1;
     }
 
 }

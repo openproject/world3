@@ -12,19 +12,21 @@
         android:scaleType="centerCrop"/>
 
     <LinearLayout
+        android:id="@+id/secret_garden_container"
         android:layout_width="match_parent"
         android:layout_height="60dip"
         android:background="#66000000"
         android:layout_gravity="bottom"
         android:gravity="right">
         <Button
-			android:layout_width="wrap_content"
-        	android:layout_height="match_parent"
-        	android:layout_gravity="center_vertical"
-        	android:background="@drawable/secret_garden_bg"
-        	android:paddingLeft="16dip"
-        	android:paddingRight="16dip"
-        	android:text="@string/action_hide_secret_garden"
-        	android:textColor="#ffffff"/>
+            android:id="@+id/secret_garden"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/secret_garden_bg"
+            android:paddingLeft="16dip"
+            android:paddingRight="16dip"
+            android:text="@string/action_hide_secret_garden"
+            android:textColor="#ffffff"/>
     </LinearLayout>
 </FrameLayout>
